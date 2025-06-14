@@ -1,3 +1,0 @@
-Testing reset.
-After push Revert 1.
-Test 2 revert.
