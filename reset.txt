@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 Commit 1.
 Commit 2.
+Testing reset.
+After push Revert 1.
+Test 2 revert.
+>>>>>>> parent of 455a7f7 (Test)
