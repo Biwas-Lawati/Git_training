@@ -1,0 +1,61 @@
+Git Configuration:
+git config --global user.name "Your Name"             # Set global username
+git config --global user.email "you@example.com"      # Set global email
+git config --list                                     # List all config settings
+
+Repository Setup:
+git init                                              # Initialize a new Git repo
+git clone <url>                                       # Clone a remote repo
+
+Status and Logs:
+git status                                            # Show current status
+git log                                               # Show commit history
+git log --oneline                                     # One-line summary of commits
+git diff                                              # Show unstaged changes
+git diff --staged                                     # Show staged changes
+
+Staging and Committing:
+git add <file>                                        # Stage a file
+git add .                                             # Stage all files
+git commit -m "Message"                               # Commit staged changes
+git commit -am "Message"                              # Add & commit tracked files in one step
+
+Branching and Merging:
+git branch                                            # List local branches
+git branch <name>                                     # Create a new branch
+git checkout <name>                                   # Switch to a branch
+git checkout -b <name>                                # Create and switch to a branch
+git merge <branch>                                    # Merge a branch into current branch
+git branch -d <name>                                  # Delete a local branch
+git push origin --delete <branch>                     # Delete remote branch
+
+Remote Repositories:
+git remote -v                                         # List remotes
+git remote add origin <url>                           # Add a remote
+git fetch                                             # Fetch updates from remote
+git pull                                              # Pull latest changes
+git push                                              # Push changes to remote
+git push -u origin <branch>                           # Push new branch and track
+
+Undo Changes:
+git restore <file>                                    # Restore file to last committed version
+git reset HEAD <file>                                 # Unstage file
+git reset --hard                                      # Reset all changes (DANGEROUS)
+git revert <commit>                                   # Revert a specific commit
+
+Cleanup and Pruning:
+git clean -f                                          # Remove untracked files
+git fetch --prune                                     # Remove deleted remote branches locally
+
+Stash Changes (Temp Save):
+git stash                                             # Stash current changes
+git stash list                                        # Show stashes
+git stash apply                                       # Re-apply last stash
+git stash drop                                        # Delete last stash
+
+Tags:
+git tag                                               # List tags
+git tag <name>                                        # Create a tag
+git push origin <tag>                                 # Push a tag to remote
+
+
