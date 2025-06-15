@@ -58,4 +58,97 @@ git tag                                               # List tags
 git tag <name>                                        # Create a tag
 git push origin <tag>                                 # Push a tag to remote
 
+1. Resolving Merge Conflicts
+git merge <branch>                      # Attempt to merge a branch
+# If conflict occurs:
+# Edit the conflicting files manually
+git status                              # See files with conflicts
+git add <file>                          # Mark conflict as resolved
+git commit                              # Complete the merge
+To abort a merge:
+git merge --abort
+
+2. Remote Setup and Management:
+git remote -v                          # Show remote URLs
+git remote add origin <url>           # Add remote repo
+git remote set-url origin <url>       # Change remote URL
+git push -u origin <branch>           # Push branch and set upstream
+git push origin --delete <branch>     # Delete branch from remote
+3. Fixing Common Mistakes
+Undo last commit (keep changes):
+git reset --soft HEAD~1
+Undo last commit (discard changes):
+git reset --hard HEAD~1
+Unstage a file:
+git reset HEAD <file>
+Restore file to last committed version:
+git restore <file>
+
+4. Using Git Stash (Temporarily Save Work)
+git stash                              # Stash current changes
+git stash save "message"               # Save stash with message
+git stash list                         # List all stashes
+git stash apply                        # Re-apply most recent stash
+git stash apply stash@{1}              # Apply a specific stash
+git stash drop                         # Delete most recent stash
+
+5. Deleting Files
+Delete a file and commit:
+git rm filename.txt
+git commit -m "Delete file"
+Keep file locally but remove from Git tracking:
+git rm --cached filename.txt
+git commit -m "Untrack file"
+
+6. Fixing Merge Conflicts in a Specific File
+# After conflict, open the file:
+# Look for markers like:
+# <<<<<<< HEAD
+# your changes
+# =======
+# incoming changes
+# >>>>>>> other-branch
+
+# Edit to resolve manually, then:
+git add <file>
+git commit
+
+7. Reverting Changes
+Revert a specific commit (creates a new commit that undoes it):
+git log                              # Get commit hash
+git revert <commit_hash>
+
+Discard all uncommitted changes:
+git reset --hard HEAD
+
+8. Push/Pull Workflow
+git pull origin main                 # Pull latest from main
+git push origin main                 # Push your commits
+
+----------------------------------------
+1. Local Branches
+.git/refs/heads/main
+2. Remote-Tracking Branches
+.git/refs/remotes/origin/main
+To View Branches in Terminal
+Local branches:
+git branch
+Remote-tracking branches:
+git branch -r
+All branches (local + remote):
+git branch -a
+Optional: See Full Path Internally
+ls .git/refs/heads/
+ls .git/refs/remotes/origin/
+git show-ref
+
+
+Goal	                        Command
+Clone repo with all branches ->	git clone <url>
+Switch to another branch ->	git checkout <branch-name>
+Create local branch from remote branch -> git checkout -b newbranch origin/newbranch
+Get a file from another branch -> git checkout <branch> -- <file> 
+View available branches -> git branch -a
+
+
 
